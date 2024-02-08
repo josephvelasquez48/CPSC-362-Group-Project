@@ -104,4 +104,20 @@ border: 1px solid lightgray;
     box-shadow: black;
 }
 
+.flashcard-word {
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
 
+.flashcard-word:hover {
+    animation: shake 0.5s;
+    text-decoration: underline;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}

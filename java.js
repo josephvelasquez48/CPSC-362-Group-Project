@@ -24,12 +24,18 @@ var h2_word = document.createElement("h2_word");
 var h2_def = document.createElement("h2_def");
 
 div.className = 'container';
-h2_word.innerHTML = text.Word;
+h2_word.innerHTML = "<span class='flashcard-word' id='flashcard-" + text.Word + "'>" + text.Word + "</span>"; // Wrap word in span with unique id
 h2_def.innerHTML = text.definition;
 
 div.appendChild(h2_word);
 div.appendChild(h2_def);
 container1.appendChild(div);
+
+document.getElementById("flashcard-" + text.Word).addEventListener("click", function() {
+    var word = text.Word;
+    var url = "https://www.dictionary.com/browse/" + word;
+    window.open(url, "_blank");
+});
 
 }
 
