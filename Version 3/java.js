@@ -42,20 +42,28 @@ document.getElementById("flashcard-" + text.Word).addEventListener("click", func
 
 }
 
-function addcard(){
-    var flashcard_data = {
-        'Word' : Word.value,
-        'definition'  : definition.value
-    }
-    
-    contentArray.push(flashcard_data);
-    localStorage.setItem('item', JSON.stringify
-    (contentArray));
+function addcard() {
+    var wordInput = document.getElementById("Word").value.trim(); // Trim to remove leading and trailing whitespace
+    var definitionInput = document.getElementById("definition").value.trim();
 
+    // Check if input fields are empty
+    if (wordInput === '' || definitionInput === '') {
+        alert("You must enter a definition/word. The input box cannot be empty.");
+        return; // Exit the function early if input fields are empty
+    }
+
+    var flashcard_data = {
+        'Word': wordInput,
+        'definition': definitionInput
+    }
+
+    contentArray.push(flashcard_data);
+    localStorage.setItem('item', JSON.stringify(contentArray));
     divMaker(contentArray[contentArray.length - 1]);
-        Word.value = '';
-        definition.value = '';
-    
+
+    // Clear input fields after saving
+    document.getElementById("Word").value = '';
+    document.getElementById("definition").value = '';
 }
 
 

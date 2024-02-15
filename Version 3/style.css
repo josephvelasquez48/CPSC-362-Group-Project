@@ -89,9 +89,7 @@ border: 1px solid lightgray;
 
 
 .container1{
-
     display:inline-block;
-
     word-wrap: break-word;
 }
 
@@ -99,12 +97,9 @@ border: 1px solid lightgray;
 .container1 div{
     width: 370px;
     height: 200px;
-    word-wrap: break-word;
     margin: 5px;
-
     background-color: rgb(20, 221, 97);
-    box-shadow: black;
-    
+ 
 }
 
 
