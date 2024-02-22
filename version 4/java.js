@@ -103,6 +103,9 @@ function eraseset(){
     localStorage.clear();
     container1.innerHTML=' ';
     contentArray = [];
+    var tableBody = document.getElementById("tableBody");
+    while(tableBody.hasChildNodes()){
+    tableBody.removeChild(tableBody.firstChild)};
 }
 
 function showbox(){
