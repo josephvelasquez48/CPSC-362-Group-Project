@@ -50,6 +50,13 @@ button:hover{
     margin: auto;
 }
 
+.container1 {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 20px; /* Add space between items */
+    justify-content: flex-start; /* Align items starting from the left */
+}
+
 .box{
     
     justify-content: space-between;
@@ -88,19 +95,6 @@ border: 1px solid lightgray;
 }
 
 
-.container1{
-    display:inline-block;
-    word-wrap: break-word;
-}
-
-
-.container1 div{
-    width: 370px;
-    height: 200px;
-    margin: 5px;
-    background-color: rgb(20, 221, 97);
- 
-}
 
 
 
@@ -119,7 +113,6 @@ border: 1px solid lightgray;
     position: relative;
     width: 200px;
     height: 150px;
-    perspective: 1000px;
     margin-bottom: 20px;
 }
 
@@ -147,8 +140,6 @@ border: 1px solid lightgray;
 .flipped .back {
     transform: rotateY(0deg);
 }
-
-
 
 
 

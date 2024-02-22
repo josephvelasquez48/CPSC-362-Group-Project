@@ -51,7 +51,22 @@ function addcard() {
         alert("You must enter a definition/word. The input box cannot be empty.");
         return; // Exit the function early if input fields are empty
     }
+//Create table row
+var row = document.createElement("tr");
 
+//Create and append table data for Word and definition
+var wordCell = document.createElement("td");
+wordCell.textContent = wordInput;
+row.appendChild(wordCell);
+var definitionCell = document.createElement("td");
+definitionCell.textContent = definitionInput;
+row.appendChild(definitionCell);
+
+//Append row to table
+var tableBody = document.getElementById("tableBody");
+tableBody.appendChild(row);
+document.getElementById("Word").value = '';
+document.getElementById("definition").value = '';
     var flashcard_data = {
         'Word': wordInput,
         'definition': definitionInput
