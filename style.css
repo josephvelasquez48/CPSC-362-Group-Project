@@ -50,12 +50,21 @@ button:hover{
     margin: auto;
 }
 
+.container1 {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 20px; /* Add space between items */
+    justify-content: flex-start; /* Align items starting from the left */
+    padding: 20px;
+}
+
 .box{
-    display: flexbox;
+    
     justify-content: space-between;
-    width: 20%;
+    width: 50%;
     margin: auto;
     padding: 20px 0;
+    flex-wrap: wrap;
     
 }
 
@@ -70,8 +79,9 @@ button:hover{
     padding: 20px;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: #4b9ff3;
+    background-color: #ffffff;
     box-shadow: 0 2px 4px 0 rgba(0,0,0.5);
+    flex-wrap: wrap;
 }
 
 .box textarea{
@@ -86,22 +96,107 @@ border: 1px solid lightgray;
 }
 
 
-.container1{
-    display: flexbox;
-    width: fit-content;
-    word-wrap: break-word;
+
+
+
+.flashcard-word {
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.flashcard-word:hover {
+    animation: shake 0.5s;
+    text-decoration: underline;
 }
 
 
-.container1 div{
-    width: 370px;
-    height: 200px;
+.flashcard {
+    position: relative;
+    width: 330px;
+    height: 280px;
+    margin-bottom: 20px;
+    padding: 10px;
     word-wrap: break-word;
-    margin: 10px;
-    border-radius: 5px;
-    display: flexbox;
-    background-color: rgb(157, 211, 247);
-    box-shadow: black;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #000;
+    transition: transform 0.5s;
+    word-break: break-all;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.flipped .back {
+    transform: rotateY(0deg);
 }
 
 
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}

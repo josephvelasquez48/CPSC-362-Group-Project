@@ -13,21 +13,25 @@
     </style>
 
 
-
-  
-
-
-
 </head>
 
 
 
 <body>
 <center>
-<h1>QF</h1>
-
-
-
+<h1>QuickFlash</h1>
+</center>
+<br>
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<br>
+<center>
 
 <span id="datetime"></span>
 
@@ -51,20 +55,24 @@
 <p>Use this website to create 
     your own set of flashcards.
 </p>
+
 <br>
+
 <div>
   <button onclick="showbox()">Open Window</button>
   <button onclick="eraseset()">Eraseset</button>
 </div>
+
+
 <div>
 <div class="contianer">
   <div class="box">
     <h2>Create Your Flashcards Here</h2>
     <label for="Word">Word</label>
-    <textarea id="Word"></textarea>
+    <textarea id="Word" maxlength="20"></textarea>
     <br>
     <label for="definition">Definition</label>
-    <textarea id="definition"></textarea>
+    <textarea id="definition" maxlength="150"></textarea>
 
     <button onclick="addcard()">Save</button>
     <button onclick="hidebox()">Exit</button>
@@ -75,24 +83,34 @@
 </div>
 
 
-<table style="width:20%">
-  <tr>
-      <th>Flashcards</th>
-</table>
+<div class="array">
+  <div class="container1">
+ 
+  </div>
+
+</div>
+
+<table style="width:100%">
+    <thead>
+      <tr>
+        <th>Words: </th>
+        <th>Definitions: </th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+  
+    </tbody>
+  </table>
 </center>
 
 
+
+
 <div>
-<div class="container1">
- 
-
-</div>
-
-</div>
-
-
-
-
+  <div class="container2">
+   
+  
+  </div>
 
 </body>
 
