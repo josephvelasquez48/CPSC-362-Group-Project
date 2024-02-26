@@ -1,2 +1,2 @@
 # CPSC-362 Group Project
- Sorce code for group project
+ Source code for group project
