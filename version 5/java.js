@@ -1,11 +1,11 @@
 
 // create a new `Date` object
-const now = new Date();
+//const now = new Date();
 
 // get the current date and time as a string
-const currentDateTime = now.toLocaleString();
+//const currentDateTime = now.toLocaleString();
 
-console.log(currentDateTime);
+//console.log(currentDateTime);
 
 const container1 = document.getElementsByClassName
 ("container1")[0];
