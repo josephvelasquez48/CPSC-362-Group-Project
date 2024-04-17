@@ -1,11 +1,11 @@
 
 // create a new `Date` object
-//const now = new Date();
+const now = new Date();
 
 // get the current date and time as a string
-//const currentDateTime = now.toLocaleString();
+const currentDateTime = now.toLocaleString();
 
-//console.log(currentDateTime);
+console.log(currentDateTime);
 
 const container1 = document.getElementsByClassName
 ("container1")[0];
@@ -45,12 +45,27 @@ function divMaker(text){
 function addcard() {
     var wordInput = document.getElementById("Word").value.trim(); // Trim to remove leading and trailing whitespace
     var definitionInput = document.getElementById("definition").value.trim();
+    var wordMaxLength = 20;
+    var definitionMaxLength = 150;
+
+     // Check if input fields exceed the maximum character limit
+     if (wordInput.length > wordMaxLength || definitionInput.length > definitionMaxLength) {
+        alert("Word or definition exceeds maximum character limit!");
+        return;
+    }
 
     // Check if input fields are empty
     if (wordInput === '' || definitionInput === '') {
         alert("You must enter a definition/word. The input box cannot be empty.");
         return; // Exit the function early if input fields are empty
     }
+
+
+    var flashcard_data = {
+        'Word': wordInput,
+        'definition': definitionInput
+    }
+
 //Create table row
 var row = document.createElement("tr");
 
@@ -88,6 +103,9 @@ function eraseset(){
     localStorage.clear();
     container1.innerHTML=' ';
     contentArray = [];
+    var tableBody = document.getElementById("tableBody");
+    while(tableBody.hasChildNodes()){
+    tableBody.removeChild(tableBody.firstChild)};
 }
 
 function showbox(){
@@ -97,4 +115,3 @@ function showbox(){
 function hidebox(){
     box.style.display = "none"
 }
-
