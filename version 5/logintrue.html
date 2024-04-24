@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,9 +17,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <title>Quickflash Registration</title>
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        /* ... Your existing style definitions ... */
+    </style>
     <style>
         body {
             background-image: url("flashcard.jpg");
@@ -87,10 +87,11 @@
         }
     </style>
 </head>
-
+</head>
 <body id="page-top">
     <div class="form-container">
-        <form id="loginForm" action="index.html" method="post" onsubmit="return validateForm()">
+        <!-- Update the form action to the server-side login endpoint -->
+        <form id="loginForm" action="your_server_side_endpoint" method="post">
             <h1>Quickflash</h1>
             <h3>Enter your login credentials</h3>
             <label for="email">Username:</label>
@@ -101,22 +102,5 @@
         </form>
         <p>Not registered? <a href="createaccount.html" style="text-decoration: none;">Create an account</a></p>
     </div>
-    <script>
-        function validateForm() {
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-
-            // You can add more complex validation logic here if needed
-
-            // Example: simple validation
-            if (email === 'example@email.com' && password === 'password') {
-                return true; // Allow form submission
-            } else {
-                alert('Invalid email or password');
-                return false; // Prevent form submission
-            }
-        }
-    </script>
 </body>
-
 </html>
