@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Share Button</title>
+</head>
+<body>
+
+<!-- Replace "YourCustomURL" with the URL you want to share -->
+<button onclick="copyToClipboard('YourCustomURL')">Copy URL</button>
+
+<script>
+    function copyToClipboard(url) {
+        const el = document.createElement('textarea');
+        el.value = url;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('URL copied to clipboard: ' + url);
+    }
+</script>
+
+</body>
+</html>

@@ -13,5 +13,17 @@
         <p>Signup was Successful!
             You may now <a href="login.php">Log in.</a>
         </p>
+        <script>
+            // Function to redirect after a certain time
+            function redirect() {
+                // Replace 'destination.html' with the path to your desired destination page
+                window.location.href = 'index.html';
+            }
+        
+            // Set the time delay (in milliseconds) before redirection
+            // Change '5000' to the desired time delay (in milliseconds)
+            setTimeout(redirect, 1000); // 5000 milliseconds = 5 seconds
+        </script>
+        <p>This page will redirect to another page after 1 second.</p>
 </body>
 </html>
