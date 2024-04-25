@@ -138,6 +138,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             <input type="password" name="password" id="password">
 
             <button>Log in</button>
+            <p>Not registered? <a href="signup.html" style="text-decoration: none;">Create an account</a></p>
         </form>
 
 
