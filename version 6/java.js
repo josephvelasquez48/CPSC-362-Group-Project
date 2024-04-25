@@ -93,38 +93,10 @@ function addcard() {
     var flashcard_data = {
         'Word': wordInput,
         'definition': definitionInput
-    }
+    };
 
- //share link (link one html to another)
- function generateShareLink(cardId) {
-    var currentUrl = window.location.href.split('?')[0]; // Get the base URL without query parameters
-    var shareUrl = `${currentUrl}?cardId=${cardId}`; // Append the cardId as a query parameter
-    return shareUrl;
-}
-
-function shareCard(cardId) {
-    var shareLink = generateShareLink(cardId);
-    navigator.clipboard.writeText(shareLink).then(function() {
-        alert("Link copied to clipboard!");
-    }, function(err) {
-        alert("Failed to copy link: ", err);
-    });
-}
-
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-function validateForm() {
-    var email = document.getElementById('email').value;
-
-    if (!validateEmail(email)) {
-        alert('Please enter a valid email address.');
-        return false;
-    }
-
-}
+    contentArray.push(flashcard_data);
+ 
 
 //Create table row
 var row = document.createElement("tr");
@@ -154,9 +126,10 @@ document.getElementById("definition").value = '';
     // Clear input fields after saving
     document.getElementById("Word").value = '';
     document.getElementById("definition").value = '';
+
+    sendFlashcardsToServer();
+    //Send flashcards to DB
 }
-
-
 
 
 function eraseset(){
@@ -174,4 +147,55 @@ function showbox(){
 
 function hidebox(){
     box.style.display = "none"
+}
+
+function sendFlashcardsToServer() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "insert.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log("Flashcards inserted successfully");
+                contentArray = [];
+                localStorage.removeItem('item');
+            } else {
+                console.error("Error inserting flashcards:", xhr.responseText);
+            }
+        }
+    };
+
+    xhr.send(JSON.stringify(contentArray));
+}
+
+//share link (link one html to another)
+function generateShareLink(cardId) {
+    var currentUrl = window.location.href.split('?')[0]; // Get the base URL without query parameters
+    var shareUrl = `${currentUrl}?cardId=${cardId}`; // Append the cardId as a query parameter
+    return shareUrl;
+}
+
+function shareCard(cardId) {
+    var shareLink = generateShareLink(cardId);
+    navigator.clipboard.writeText(shareLink).then(function() {
+        alert("Link copied to clipboard!");
+    }, function(err) {
+        alert("Failed to copy link: ", err);
+    });
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function validateForm() {
+    var email = document.getElementById('email').value;
+
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+
 }
