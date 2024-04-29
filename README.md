@@ -35,7 +35,7 @@ Setup and Installation
 
     bash
 
-git clone 
+git clone https://github.com/josephvelasquez48/CPSC-362-Group-Project.git
 
 Navigate to the project directory:
 
