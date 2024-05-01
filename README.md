@@ -10,11 +10,11 @@ Welcome to the Quickflash repository! Quickflash is a dynamic flashcard website 
 
 ## Website Access
 
-To access Quickflash, visit [Quickflash Website](quickflash.store).
+To access Quickflash, visit [Quickflash Website](https://quickflash.store).
 
 ## How to Use Quickflash
 
-1. **Sign Up**: Register for an account by providing your name, email, and password. Navigate to the signup page directly at `http://your-website-url.com/signup`.
+1. **Sign Up**: Register for an account by providing your name, email, and password. Navigate to the signup page directly at `https://quickflash.store/index.html`.
 
 2. **Log In**: After registering, log in with your credentials to access your personalized flashcard dashboard.
 
