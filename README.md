@@ -36,6 +36,7 @@ The project is structured with several key PHP files that handle different aspec
 - `home.php` - The main dashboard for logged-in users.
 - `process-signup.php` - Processes user registrations.
 - `validate-email.php` - Validates emails during registration.
+- `copy_flashcards.php` - Copies another user's cards to your account.
 
 ### Prerequisites
 
