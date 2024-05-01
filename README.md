@@ -1,63 +1,66 @@
-# CPSC-362 Group Project
- Source code for group project
+# Quickflash
 
+Welcome to the Quickflash repository! Quickflash is a dynamic flashcard website designed to help users learn and memorize information more effectively. With a simple and intuitive user interface, Quickflash allows users to create, manage, and use flashcards for various subjects and topics.
 
-QuickFlash
-Overview
+## Features
 
-QuickFlash is a web-based application designed for creating and managing digital flashcards. It allows users to register, log in, and create personalized flashcards for studying and memorization.
-Features
+- **User Registration and Login**: Secure user authentication to keep your flashcards private.
+- **Flashcard Management**: Create, view, and delete flashcards.
+- **Interactive Learning Sessions**: Engage with flashcards in a user-friendly interface.
 
-    User Registration and Login: Secure signup and login functionality.
-    Flashcard Management: Users can create, save, and view flashcards.
-    Automatic Redirection: After successful signup, users are automatically redirected to the login page.
+## Website Access
 
-Technologies Used
+To access Quickflash, visit [Quickflash Website](quickflash.store).
 
-    HTML/CSS: For structuring and styling the web pages.
-    JavaScript: For client-side scripting and form validations.
-    PHP: Backend scripts to handle user authentication, registration, and session management.
-    MySQL: (Assumed based on context) For storing user data and flashcards.
+## How to Use Quickflash
 
-Project Structure
+1. **Sign Up**: Register for an account by providing your name, email, and password. Navigate to the signup page directly at `http://your-website-url.com/signup`.
 
-    index.html - The main entry point of the application with navigation and flashcard creation features.
-    signup.html and signup-success.html - Handles the user registration process.
-    login.php - Manages user login functionality.
-    logout.php - Handles user logout.
-    process-signup.php - Processes the signup form data.
-    database.php - Manages database connections (assumed based on the context, not visible in the provided files).
-    java.js - Contains JavaScript for client-side logic.
+2. **Log In**: After registering, log in with your credentials to access your personalized flashcard dashboard.
 
-Setup and Installation
+3. **Create Flashcards**: Once logged in, you can start creating flashcards by entering a term and its definition.
 
-    Clone the repository:
+4. **Study**: Use the interactive learning session to review your flashcards and test your memory.
 
-    bash
+5. **Manage Flashcards**: View your list of flashcards and delete any that you no longer need.
 
-git clone https://github.com/josephvelasquez48/CPSC-362-Group-Project.git
+## Technical Setup
 
-Navigate to the project directory:
+The project is structured with several key PHP files that handle different aspects of the application:
+- `database.php` - Manages the database connection.
+- `login.php` - Handles user login.
+- `logout.php` - Manages user logout.
+- `insert.php` - For inserting new flashcards into the database.
+- `delete.php` - Handles the deletion of flashcards.
+- `generate.php` - Used to generate the flashcard view.
+- `home.php` - The main dashboard for logged-in users.
+- `process-signup.php` - Processes user registrations.
+- `validate-email.php` - Validates emails during registration.
 
-bash
+### Prerequisites
 
-    cd QuickFlash
+- PHP 7.4 or higher.
+- MySQL Database.
+- Functioning Laptop or Computer
+- Stable Wi-Fi connection
 
-    Setup the database:
-        Import the SQL script provided in the database.sql file to set up the database schema.
-    Configure your server:
-        Ensure your server supports PHP and MySQL.
-        Configure the database.php to connect to your database.
+### Installation
 
-Usage
+1. Clone the repository to your server.
+2. Configure your web server to point to the cloned directory.
+3. Set up the MySQL database and import any necessary schema from the provided SQL files (not included in this description).
+4. Update `database.php` with your database credentials.
 
-    Open the index.html in your browser to start using the application.
-    Register a new account using the signup form.
-    Log in to access and create flashcards.
+## Contributing
 
-Contributing
+Feel free to fork this repository and submit pull requests. You can also open issues if you find bugs or have feature suggestions.
 
-Contributions are welcome! For major changes, please open an issue first to discuss what you would like to change.
-License
+## License
 
-Distributed under the MIT License. See LICENSE for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Authors
+
+- Martin Nguyen, Michael Aladerasu, Edward Hernandez, Joseph Velasquez, Rilijin Carrillo
+
+Enjoy using Quickflash for your learning needs!
