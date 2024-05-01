@@ -16,11 +16,11 @@ To access Quickflash, visit [Quickflash Website](https://quickflash.store).
 
 1. **Sign Up**: Register for an account by providing your name, email, and password. Navigate to the signup page directly at `https://quickflash.store/index.html`.
 
-2. **Log In**: After registering, log in with your credentials to access your personalized flashcard dashboard.
+2. **Log In**: After registering, log in with your credentials to access your personalized flashcard dashboard. After using our site, log out and all your cards will be saved.
 
 3. **Create Flashcards**: Once logged in, you can start creating flashcards by entering a term and its definition.
 
-4. **Study**: Use the interactive learning session to review your flashcards and test your memory.
+4. **Study**: Use the interactive learning session to review your flashcards and test your memory. Feature includes the card flipping showcasing both the word and definition.
 
 5. **Manage Flashcards**: View your list of flashcards and delete any that you no longer need.
 
